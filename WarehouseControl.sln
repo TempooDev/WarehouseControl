@@ -8,9 +8,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseControl.ApiService
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseControl.Web", "WarehouseControl\WarehouseControl.Web\WarehouseControl.Web.csproj", "{989A797E-511F-404D-8257-82429B53ADF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseControl.Data", "WarehouseControl.Data\WarehouseControl.Data.csproj", "{1C81AECC-4587-486F-B6F1-7C5CCDB9C180}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseControl.Data", "WarehouseControl\WarehouseControl.Data\WarehouseControl.Data.csproj", "{1C81AECC-4587-486F-B6F1-7C5CCDB9C180}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseControl.Common", "WarehouseControl.Common\WarehouseControl.Common.csproj", "{322150AB-A771-4495-BA48-4A9BBF2F0C2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseControl.Common", "WarehouseControl\WarehouseControl.Common\WarehouseControl.Common.csproj", "{322150AB-A771-4495-BA48-4A9BBF2F0C2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
