@@ -1,3 +1,6 @@
+using WarehouseControl.Common.Mocks;
+using WarehouseControl.Common.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire components.
@@ -28,6 +31,34 @@ app.MapGet("/weatherforecast", () =>
         .ToArray();
     return forecast;
 });
+
+app.MapGet("/products", (string? name, string? description) =>
+{
+    IEnumerable<Product> result = Enumerable.Empty<Product>();
+    if (String.IsNullOrEmpty(name) && String.IsNullOrEmpty(description))
+        return Results.Ok<IEnumerable<Product>>(MockWarehouseData.Products);
+    
+    if (!String.IsNullOrEmpty(name))
+    {
+    
+        result=result.Concat( MockWarehouseData.Products.Where(p => p.Name.ToUpperInvariant().Contains(name.ToUpperInvariant())));
+        Console.WriteLine(result.ToString());
+    }
+
+    if (!String.IsNullOrEmpty(description))
+    {
+        result =result.Concat(MockWarehouseData.Products.Where(p => p.Description.ToUpperInvariant().Contains(description.ToUpperInvariant())));
+
+    }
+
+
+    return Results.Ok(result);
+
+});
+
+app.MapGet("/products/{id}", (int id) => MockWarehouseData.Products.Where(p => p.ProductId == id));
+
+
 
 app.MapDefaultEndpoints();
 
