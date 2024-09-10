@@ -7,6 +7,7 @@ builder.Services.AddSwaggerGen();
 // Add service defaults & Aspire components.
 builder.AddServiceDefaults();
 
+builder.AddNpgsqlDbContext<WarehouseControlDbContext>("postgresdb");
 // Add services to the container.
 builder.Services.AddProblemDetails();
 
@@ -20,6 +21,8 @@ var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
+
+
 
 #region Weatherforecast
 app.MapGet("/weatherforecast", () =>
@@ -95,7 +98,12 @@ app.MapGet("/warehouses", (string? name, int? cityId, string? countryID, int? wa
     return Results.Ok <IEnumerable<Warehouse>>(results);
 });
 
+app.MapGet("/warehouses/{id}",(int id) =>{
+
+    return Results.Ok<IEnumerable<Warehouse>>(MockWarehouseData.Warehouses.Where(w => w.Id == id));
+}); 
 #endregion
+
 app.MapDefaultEndpoints();
 
 app.Run();

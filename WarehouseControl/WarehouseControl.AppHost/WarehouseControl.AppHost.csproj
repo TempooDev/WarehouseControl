@@ -10,12 +10,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\WarehouseControl.ApiService\WarehouseControl.ApiService.csproj"/>
-        <ProjectReference Include="..\WarehouseControl.Web\WarehouseControl.Web.csproj"/>
+        <ProjectReference Include="..\WarehouseControl.ApiService\WarehouseControl.ApiService.csproj" />
+        <ProjectReference Include="..\WarehouseControl.Web\WarehouseControl.Web.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Aspire.Hosting.AppHost" Version="8.2.0"/>
+        <PackageReference Include="Aspire.Hosting.AppHost" Version="8.2.0" />
+        <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="8.2.0" />
+        <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.2.0" />
     </ItemGroup>
 
 </Project>

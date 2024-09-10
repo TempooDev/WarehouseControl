@@ -1,6 +1,10 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-var apiService = builder.AddProject<Projects.WarehouseControl_ApiService>("apiservice");
+var postgresserver = builder.AddPostgres("postgres").WithPgAdmin();;
+var warehouseControldb = postgresserver.AddDatabase("postgresdb");
+
+var apiService = builder.AddProject<Projects.WarehouseControl_ApiService>("apiservice")
+                        .WithReference(warehouseControldb);
 
 builder.AddProject<Projects.WarehouseControl_Web>("webfrontend")
     .WithExternalHttpEndpoints()

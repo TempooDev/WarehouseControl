@@ -8,10 +8,11 @@
 
     <ItemGroup>
         <ProjectReference Include="..\WarehouseControl.Common\WarehouseControl.Common.csproj" />
-        <ProjectReference Include="..\WarehouseControl.ServiceDefaults\WarehouseControl.ServiceDefaults.csproj"/>
+        <ProjectReference Include="..\WarehouseControl.ServiceDefaults\WarehouseControl.ServiceDefaults.csproj" />
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.2.0" />
       <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.3" />
       <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.7.3" />
     </ItemGroup>
