@@ -35,7 +35,7 @@ namespace WarehouseControl.Common.Mocks
             };
 
 
-        public static List<Stock> GetMockStocks =>
+        public static List<Stock> Stocks =>
             new List<Stock>
             {
                 new Stock { StockId = 1, Rack = Racks[0], Type = Products[0], Count = 50 },
